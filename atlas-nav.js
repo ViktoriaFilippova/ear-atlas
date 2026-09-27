@@ -35,7 +35,7 @@ function build(){
   const total=SECTIONS.reduce((n,s)=>n+s.items.filter(i=>!i.soon).length,0);
   const wasOpen=nav.querySelector(".an-pop.open");
   nav.className="an";
-  nav.innerHTML=`<div class="an-crumbs"><span>${t.atlas}</span>${grp?` / <span>${grp.g[L]}</span>`:""}${item&&grp.items.length>1?` / <b>${item[L]}</b>`:""}</div>
+  nav.innerHTML=`<div class="an-crumbs"><span>${t.atlas}</span>${grp?` / <span>${grp.g[L]}</span>`:""}${item?` / <b>${item[L]}</b>`:""}</div>
    <button class="an-btn" aria-expanded="false" aria-controls="an-pop">${t.all} · ${total}<i aria-hidden="true">▾</i></button>
    <div class="an-pop" id="an-pop" role="dialog" aria-label="${t.all}">
      ${total>6?`<input type="search" placeholder="${t.find}" aria-label="${t.find}">`:""}
